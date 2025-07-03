@@ -151,9 +151,9 @@
                 <div id="pickupLocation" class="meeting-point">
                     <h3>Treffpunkt auswählen</h3>
                     <select id="meetingPoint" class="form-input">
-                        <option value="Hauptbahnhof, Berlin">Hauptbahnhof, Berlin</option>
-                        <option value="Alexanderplatz, Berlin">Alexanderplatz, Berlin</option>
-                        <option value="Potsdamer Platz, Berlin">Potsdamer Platz, Berlin</option>
+                        <option value="Sachsen-Allee">Sachsen-Allee</option>
+                        <option value="Zentralhaltestelle">Zentralhaltestelle</option>
+                        <option value="Yorck Center">Yorck Center</option>
                         <option value="Anderer Ort (per Nachricht)">Anderer Ort (wir kontaktieren Sie)</option>
                     </select>
                 </div>
@@ -168,6 +168,11 @@
                     <div class="payment-method" onclick="selectPaymentMethod('monero')">
                         <input type="radio" id="monero" name="paymentMethod" value="monero">
                         <label for="monero">Monero (XMR)</label>
+                    </div>
+                    
+                    <div class="payment-method" onclick="selectPaymentMethod('paypal')">
+                        <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                        <label for="paypal">PayPal</label>
                     </div>
                 </div>
                 
@@ -184,6 +189,13 @@
                     <p>Gesamtbetrag: <span id="moneroAmount">0</span> XMR</p>
                     <p>Bitte beachten Sie, dass die Transaktion mehrere Bestätigungen benötigen kann.</p>
                 </div>
+
+                <div id="paypalDetails" class="payment-details" style="display: none;">
+                    <p>Bitte senden Sie die Zahlung an folgende PayPal-Email:</p>
+                    <div class="crypto-address">nicktautenhahn69@gmail.com</div>
+                    <p>Bitte beachten Sie, dass Sie die Zahlung direkt an diese Email-Adresse senden müssen.</p>
+                    <p>Bitte warten Sie auf Bestätigung, bevor Sie die Bestellung als abgeschlossen betrachten.</p>
+                </div>
                 
                 <div class="checkout-buttons">
                     <button class="back-btn" onclick="closeCheckoutModal()">Zurück</button>
@@ -195,7 +207,7 @@
                 <div class="success-icon">✓</div>
                 <h2>Vielen Dank für Ihren Kauf!</h2>
                 <p>Ihre Bestellung wurde erfolgreich aufgegeben.</p>
-                <p>Die Details wurden an unseren Discord gesendet.</p>
+                <p>Bitte melden Sie sich bei @Flurax auf Telegram für weitere Informationen oder Hilfe.</p>
                 <button class="confirm-btn" onclick="closeCheckoutModal()">Fertig</button>
             </div>
         </div>
