@@ -183,6 +183,7 @@ function selectPaymentMethod(method) {
     // Alle Zahlungsdetails ausblenden
     document.getElementById('bitcoinDetails').style.display = 'none';
     document.getElementById('moneroDetails').style.display = 'none';
+    document.getElementById('paypalDetails').style.display = 'none';
     
     // Ausgewählte Zahlungsmethode anzeigen
     document.getElementById(`${method}Details`).style.display = 'block';
