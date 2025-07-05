@@ -84,6 +84,18 @@ function changeQuantity(amount) {
 
 // Lieferoptionen
 function selectDeliveryOption(option) {
+    // Setze den korrekten Radio Button
+    const shippingRadio = document.getElementById('shipping');
+    const pickupRadio = document.getElementById('pickup');
+    
+    if (option === 'shipping') {
+        shippingRadio.checked = true;
+        pickupRadio.checked = false;
+    } else {
+        shippingRadio.checked = false;
+        pickupRadio.checked = true;
+    }
+    
     document.getElementById('shippingAddress').style.display = option === 'shipping' ? 'block' : 'none';
     document.getElementById('pickupLocation').style.display = option === 'pickup' ? 'block' : 'none';
     
@@ -93,6 +105,41 @@ function selectDeliveryOption(option) {
 }
 
 // Discord-Webhook-Integration
+function submitIdea() {
+    const ideaInput = document.getElementById('productIdea');
+    const idea = ideaInput.value.trim();
+    
+    if (!idea) {
+        alert('Bitte gib eine Produktidee ein!');
+        return;
+    }
+
+    const webhookUrl = 'https://discord.com/api/webhooks/1391151325277851790/gjYXzrwk8NBEZUsI-B4-HY9-2EeNNZZsV1HZxBRStBp2Lm-edOBZEkOgkpT8snzxONlF';
+    const data = {
+        content: `Neue Produktidee: ${idea}`
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Vielen Dank für deine Produktidee! Sie wurde erfolgreich gesendet.');
+            ideaInput.value = '';
+        } else {
+            throw new Error('Fehler beim Senden der Produktidee');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Es ist ein Fehler beim Senden der Produktidee aufgetreten. Bitte versuche es später erneut.');
+    });
+}
+
 async function sendToDiscord(data) {
     const webhookURL = 'https://discord.com/api/webhooks/1390094250628350053/3U1kf7q3zQOZCIzjkwm5V0IOYH30TNANl1KFa1CgSNdS5rlRG8ybeECvveajCexUW0fG';
     
