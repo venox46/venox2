@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venox SHOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animierter Hintergrund -->
+    <div class="bg-animation" id="bgAnimation"></div>
+    
+    <header>
+        <h1 class="shop-title">Venox SHOP</h1>
+    </header>
+    
+    <!-- Announcement Banner -->
+    <div class="announcement-banner">
+        <div class="banner-content">
+            <h2>Der Shop wird bald veröffentlicht!</h2>
+            <p>⚠️ Wir nehmen derzeit keine Bestellungen entgegen. Melde dich hier für Produktideen an:</p>
+            <div class="idea-form">
+                <input type="text" id="productIdea" placeholder="Deine Produktidee...">
+                <button onclick="submitIdea()">Absenden</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="products">
+            <!-- Produkt 1 -->
+            <div class="product-card" onclick="openModal(0)">
+                <img src="images/product1.png" alt="Produkt 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Dein Titel</h3>
+                    <p>Deine Beschreibung</p>
+                    <div class="product-price">€89.99</div>
+                </div>
+            </div>
+            
+            <!-- Produkt 2 -->
+            <div class="product-card" onclick="openModal(1)">
+                <img src="images/product2.png" alt="Produkt 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Dein Titel</h3>
+                    <p>Deine Beschreibung</p>
+                    <div class="product-price">€129.99</div>
+                </div>
+            </div>
+            
+            <!-- Produkt 3 -->
+            <div class="product-card" onclick="openModal(2)">
+                <img src="images/product3.png" alt="Produkt 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Dein Titel</h3>
+                    <p>Deine Beschreibung</p>
+                    <div class="product-price">€59.99</div>
+                </div>
+            </div>
+            
+            <!-- Produkt 4 -->
+            <div class="product-card" onclick="openModal(3)">
+                <img src="images/product4.png" alt="Produkt 4" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Dein Titel</h3>
+                    <p>Deine Beschreibung</p>
+                    <div class="product-price">€24.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal für Produktdetails -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-product">
+                <img id="modalProductImage" src="images/product1.png" alt="Produktbild" class="modal-image">
+                <div class="modal-details">
+                    <h2 id="modalProductTitle" class="modal-title"></h2>
+                    <div id="modalProductPrice" class="modal-price"></div>
+                    <p id="modalProductDescription" class="modal-description"></p>
+                    
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="productQuantity" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button id="addToCartBtn" class="add-to-cart">In den Warenkorb</button>
+                        <button id="buyNowBtn" class="add-to-cart buy-now">Jetzt kaufen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="checkout-modal">
+        <div class="checkout-content">
+            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
+            <h2 class="checkout-title">Bestellung abschließen</h2>
+            
+            <div class="checkout-summary">
+                <h3>Ihre Bestellung</h3>
+                <div id="checkoutItems" class="checkout-items">
+                    <!-- Dynamisch gefüllt -->
+                </div>
+                <div id="checkoutTotal" class="checkout-total">
+                    <!-- Dynamisch gefüllt -->
+                </div>
+            </div>
+            
+            <div id="checkoutForm">
+                <h3>Kontaktinformationen</h3>
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Vollständiger Name</label>
+                    <input type="text" id="fullName" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">E-Mail</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                
+                <h3>Lieferoptionen</h3>
+                <div class="delivery-options">
+                    <div class="delivery-option" onclick="selectDeliveryOption('shipping')">
+                        <input type="radio" id="shipping" name="delivery" value="shipping" checked>
+                        <label for="shipping">Versand (Adresse angeben)</label>
+                    </div>
+                    
+                    <div class="delivery-option" onclick="selectDeliveryOption('pickup')">
+                        <input type="radio" id="pickup" name="delivery" value="pickup">
+                        <label for="pickup">Abholung (Treffpunkt auswählen)</label>
+                    </div>
+                </div>
+                
+                <div id="shippingAddress" class="address-form">
+                    <h3>Lieferadresse</h3>
+                    <div class="form-group">
+                        <label for="streetAddress" class="form-label">Straße und Hausnummer</label>
+                        <input type="text" id="streetAddress" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city" class="form-label">Stadt</label>
+                        <input type="text" id="city" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postalCode" class="form-label">Postleitzahl</label>
+                        <input type="text" id="postalCode" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country" class="form-label">Land</label>
+                        <input type="text" id="country" class="form-input">
+                    </div>
+                </div>
+                
+                <div id="pickupLocation" class="meeting-point">
+                    <h3>Treffpunkt auswählen</h3>
+                    <select id="meetingPoint" class="form-input">
+                        <option value="Sachsen-Allee">Sachsen-Allee</option>
+                        <option value="Zentralhaltestelle">Zentralhaltestelle</option>
+                        <option value="Yorck Center">Yorck Center</option>
+                        <option value="Anderer Ort (per Nachricht)">Anderer Ort (wir kontaktieren Sie)</option>
+                    </select>
+                </div>
+                
+                <h3>Zahlungsmethode</h3>
+                <div class="payment-methods">
+                    <div class="payment-method" onclick="selectPaymentMethod('bitcoin')">
+                        <input type="radio" id="bitcoin" name="paymentMethod" value="bitcoin" checked>
+                        <label for="bitcoin">Bitcoin (BTC)</label>
+                    </div>
+            
+                    
+                    <div class="payment-method" onclick="selectPaymentMethod('paypal')">
+                        <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                        <label for="paypal">PayPal</label>
+                    </div>
+                </div>
+                
+                <div id="bitcoinDetails" class="payment-details">
+                    <p>Bitte senden Sie die Zahlung an folgende Bitcoin-Adresse:</p>
+                    <div class="crypto-address">bc1qm79x3hmv5hdlwexxm6qdlvdngr2qj6es46a0kw</div>
+                    <p>Gesamtbetrag: <span id="bitcoinAmount">0</span> BTC</p>
+                    <p>Bitte beachten Sie, dass die Transaktion mehrere Bestätigungen benötigen kann.</p>
+                </div>
+                
+                <div id="moneroDetails" class="payment-details">
+                    <p>Bitte senden Sie die Zahlung an folgende Monero-Adresse:</p>
+                    <div class="crypto-address">48jY7dLQkR5LmwVobQp3YqPK8yWkaXZQ4nJhZJQ1vJ5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5J5</div>
+                    <p>Gesamtbetrag: <span id="moneroAmount">0</span> XMR</p>
+                    <p>Bitte beachten Sie, dass die Transaktion mehrere Bestätigungen benötigen kann.</p>
+                </div>
+
+                <div id="paypalDetails" class="payment-details" style="display: none;">
+                    <p>Bitte senden Sie die Zahlung an folgende PayPal-Email:</p>
+                    <div class="crypto-address">nicktautenhahn69@gmail.com</div>
+                    <p>Bitte beachten Sie, dass Sie die Zahlung direkt an diese Email-Adresse senden müssen.</p>
+                    <p>Bitte warten Sie auf Bestätigung, bevor Sie die Bestellung als abgeschlossen betrachten.</p>
+                </div>
+                
+                <div class="checkout-buttons">
+                    <button class="back-btn" onclick="closeCheckoutModal()">Zurück</button>
+                    <button class="confirm-btn" onclick="completePurchase()">Kauf bestätigen</button>
+                </div>
+            </div>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h2>Vielen Dank für Ihren Kauf!</h2>
+                <p>Ihre Bestellung wurde erfolgreich aufgegeben.</p>
+                <p>Bitte melden Sie sich bei @Flurax auf Telegram für weitere Informationen oder Hilfe.</p>
+                <button class="confirm-btn" onclick="closeCheckoutModal()">Fertig</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
