@@ -160,8 +160,17 @@ let currentBannerIndex = 0
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
   initializeCursor()
-  startSplashScreen()
   startBannerSlider()
+  
+  // Initialize main content after splash screen
+  setTimeout(() => {
+    const splashScreen = document.getElementById("splashScreen");
+    if (splashScreen) {
+      splashScreen.classList.add("hidden");
+      document.getElementById("mainContent").classList.remove("hidden");
+      showHome();
+    }
+  }, 3000); // Adjust timing to match splash screen duration
 })
 
 // Custom Cursor
@@ -198,17 +207,20 @@ function startSplashScreen() {
     document.getElementById("progressText").textContent = progress + "%"
 
     if (progress >= 100) {
-      clearInterval(progressInterval)
       clearInterval(matrixInterval)
+      clearInterval(progressInterval)
+      
+      // Hide splash screen and show main content
       setTimeout(() => {
-        document.getElementById("splashScreen").style.opacity = "0"
-        setTimeout(() => {
-          document.getElementById("splashScreen").classList.add("hidden")
+        const splashScreen = document.getElementById("splashScreen")
+        if (splashScreen) {
+          splashScreen.classList.add("hidden")
           document.getElementById("mainContent").classList.remove("hidden")
-        }, 500)
-      }, 500)
+          showHome()
+        }
+      }, 500) // Small delay for smooth transition
     }
-  }, 30)
+  }, 500)
 }
 
 // Banner Slider
