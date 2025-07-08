@@ -22,10 +22,10 @@ const SHOP_CONFIG = {
 const PRODUCTS_CONFIG = [
   {
     id: 1,
-    name: "Premium Glass Bong",
-    price: 89.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
+    name: "Blueberry",
+    price: 10.00,
+    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
+    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
     description:
       "Hochwertige Glas-Bong aus borosilicatglas. Perfekt für ein sauberes und geschmackvolles Raucherlebnis.",
     features: ["Borosilicatglas", "Abnehmbarer Kopf", "Stabile Basis", "Leicht zu reinigen"],
@@ -268,29 +268,34 @@ function startBannerSlider() {
 function showHome() {
   hideAllPages()
   document.getElementById("homePage").classList.remove("hidden")
+  window.scrollTo(0, 0)
 }
 
 function showShop() {
   hideAllPages()
   document.getElementById("shopPage").classList.remove("hidden")
   loadProducts()
+  window.scrollTo(0, 0)
 }
 
 function showProduct(productId) {
   hideAllPages()
   document.getElementById("productPage").classList.remove("hidden")
   loadProduct(productId)
+  window.scrollTo(0, 0)
 }
 
 function showCheckout() {
   hideAllPages()
   document.getElementById("checkoutPage").classList.remove("hidden")
   loadCheckout()
+  window.scrollTo(0, 0)
 }
 
 function showSuccess() {
   hideAllPages()
   document.getElementById("successPage").classList.remove("hidden")
+  window.scrollTo(0, 0)
 }
 
 function hideAllPages() {
