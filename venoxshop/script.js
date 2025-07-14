@@ -3,7 +3,7 @@
 // 🔧 KONFIGURATION - HIER ALLES ÄNDERN! 🔧
 const SHOP_CONFIG = {
   shopName: "CLAY GROUP",
-  shopDescription: "Premium Cannabis Zubehör",
+  shopDescription: "Premium Cannabis",
   shopTagline: "Qualität die überzeugt",
   paypal: {
     email: "nicktautenhahn69@gmail.com",
@@ -22,44 +22,44 @@ const SHOP_CONFIG = {
 const PRODUCTS_CONFIG = [
   {
     id: 1,
-    name: "Blueberry",
-    price: 10.00,
+    name: "Blueberry 1g",
+    price: 8.00,
     image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
     image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
     description:
-      "Hochwertige Glas-Bong aus borosilicatglas. Perfekt für ein sauberes und geschmackvolles Raucherlebnis.",
-    features: ["Borosilicatglas", "Abnehmbarer Kopf", "Stabile Basis", "Leicht zu reinigen"],
-    category: "Bongs",
+      "Hochwertiges weed",
+    features: ["THC 19-13%", "CBD 1%", "Geschmack fruchtig, beerig, süß", ""],
+    category: "Weed",
   },
   {
     id: 2,
-    name: "Ceramic Grinder Set",
-    price: 34.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Premium Keramik-Grinder für perfekt zerkleinerte Kräuter. Langlebig und effizient.",
-    features: ["Keramik-Zähne", "4-teilig", "Magnetverschluss", "Pollenfänger"],
-    category: "Grinder",
+    name: "Super Lemon Haze 1g",
+    price: 8.00,
+    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
+    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    description: "Hochwertiges weed",
+    features: ["THC 18-22%", "CBD 1%", "Geschmack Zitrus, fruchtig, erdig, würzig", ""],
+    category: "Weed",
   },
   {
     id: 3,
-    name: "Rolling Papers Premium",
-    price: 12.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Hochwertige Rolling Papers aus natürlichen Materialien. Dünn und gleichmäßig brennend.",
-    features: ["Natürliche Materialien", "Dünn & gleichmäßig", "Langsam brennend", "32 Blättchen"],
-    category: "Papers",
+    name: "Blue Dream CBD Genetik 1g",
+    price: 10.00,
+    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
+    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    description: "Hochwertiges weed",
+    features: ["THC 1%", "CBD 10%", "Geschmack Pfeffer, Kiefer, beerig, süß", ""],
+    category: "weed",
   },
   {
     id: 4,
-    name: "Vaporizer Deluxe",
-    price: 199.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Professioneller Vaporizer mit präziser Temperaturkontrolle für optimale Verdampfung.",
-    features: ["Digitale Temperaturkontrolle", "Keramik-Heizkammer", "USB-C Aufladung", "LED Display"],
-    category: "Vaporizer",
+    name: "Big Bud 1g",
+    price: 8.00,
+    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
+    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    description: "Hochwertiges weed",
+    features: ["THC 15-18", "CBD 1%", "Geschmack Zitrus, fruchtig, süß, würzig", ""],
+    category: "Weed",
   },
   {
     id: 5,
@@ -452,10 +452,79 @@ function loadCheckout() {
   updatePaymentUI()
 }
 
-// Select Delivery Method
 function selectDelivery(method) {
   selectedDeliveryMethod = method
   updateDeliveryUI()
+  
+  // Remove any existing warnings
+  const existingWarnings = document.querySelectorAll('.delivery-warning, .shipping-warning');
+  existingWarnings.forEach(warning => warning.remove());
+  
+  // Show appropriate warning based on delivery method
+  if (method === "Versand") {
+    const warning = document.createElement('div')
+    warning.className = 'shipping-warning'
+    warning.innerHTML = `
+      
+    `
+    document.body.appendChild(warning)
+    
+    // Remove warning after 10 seconds
+    setTimeout(() => {
+      const warning = document.querySelector('.shipping-warning')
+      if (warning) {
+        warning.remove()
+      }
+    }, 10000)
+  } else if (method === "Abholung") {
+    const warning = document.createElement('div')
+    warning.className = 'delivery-warning'
+    warning.innerHTML = `
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>Abholhinweis:</strong><br>
+        Bitte kontaktiere uns nach dem Kauf, um die Abholung zu vereinbaren.<br>
+        Wir werden dir die genaue Adresse und Uhrzeit mitteilen.
+      </div>
+    `
+    document.body.appendChild(warning)
+    
+    // Remove warning after 5 seconds
+    setTimeout(() => {
+      const warning = document.querySelector('.delivery-warning')
+      if (warning) {
+        warning.remove()
+      }
+    }, 5000)
+  }
+  
+  // Check if both brain checkout and shipping are selected
+  if (selectedPaymentMethod === 'brain' && method === 'shipping') {
+    // Show warning message
+    const warning = document.createElement('div')
+    warning.className = 'delivery-warning'
+    warning.innerHTML = `
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>Wichtiger Hinweis:</strong>
+        Brain-Checkout und Versand können nicht kombiniert werden. Bitte wähle eine andere Kombination.
+      </div>
+    `
+    document.body.appendChild(warning)
+    
+    // Remove warning after 5 seconds
+    setTimeout(() => {
+      const warning = document.querySelector('.delivery-warning')
+      if (warning) {
+        warning.remove()
+      }
+    }, 5000)
+    
+    // Reset selection
+    selectedDeliveryMethod = ''
+    updateDeliveryUI()
+    return
+  }
 
   const formTitle = document.getElementById("formTitle")
   const shippingFields = document.getElementById("shippingFields")
