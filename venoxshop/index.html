@@ -76,20 +76,100 @@
 
     <!-- Main Content -->
     <div id="mainContent" class="hidden">
+        <!-- Main Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600 shadow-lg">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Logo -->
+                    <button onclick="showHome()" class="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                        CLAY GROUP
+                    </button>
+                    
+                    <!-- Navigation Links -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <button onclick="showShop()" class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-dark-700 group">
+                            <span>Shop</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-500 group-hover:w-full transition-all duration-300"></div>
+                        </button>
+                        <button onclick="showSafety()" class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-dark-700 group">
+                            <span>Sicherheit</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></div>
+                        </button>
+                        <button onclick="showContact()" class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-dark-700 group">
+                            <span>Kontakt</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></div>
+                        </button>
+                        <button onclick="showFAQ()" class="relative text-gray-300 hover:text-white transition-all duration-300 font-medium px-4 py-2 rounded-lg hover:bg-dark-700 group">
+                            <span>FAQ</span>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-500 group-hover:w-full transition-all duration-300"></div>
+                        </button>
+                    </div>
+                    
+                    <!-- Right Side Actions -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Status Indicator -->
+                        <div class="hidden lg:flex items-center space-x-2 text-sm text-gray-400">
+                            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                            <span>Online</span>
+                        </div>
+                        
+                        <!-- Mobile Menu Button -->
+                        <div class="md:hidden">
+                            <button onclick="toggleMobileMenu()" class="p-2 rounded-lg bg-dark-400 hover:bg-dark-300 transition-all duration-300 hover:scale-105">
+                                <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 border-t border-dark-600">
+                    <div class="flex flex-col space-y-2 pt-4">
+                        <button onclick="showShop()" class="text-gray-300 hover:text-white transition-all duration-300 font-medium text-left p-3 rounded-lg hover:bg-dark-700 flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            Shop
+                        </button>
+                        <button onclick="showSafety()" class="text-gray-300 hover:text-white transition-all duration-300 font-medium text-left p-3 rounded-lg hover:bg-dark-700 flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Sicherheit
+                        </button>
+                        <button onclick="showContact()" class="text-gray-300 hover:text-white transition-all duration-300 font-medium text-left p-3 rounded-lg hover:bg-dark-700 flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Kontakt
+                        </button>
+                        <button onclick="showFAQ()" class="text-gray-300 hover:text-white transition-all duration-300 font-medium text-left p-3 rounded-lg hover:bg-dark-700 flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            FAQ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <!-- Home Page -->
-        <div id="homePage" class="min-h-screen">
+        <div id="homePage" class="min-h-screen pt-16">
             <!-- Auto Slider Banner -->
             <div class="relative w-full h-screen overflow-hidden">
                 <div id="bannerImage" class="absolute top-0 left-0 w-full h-full">
                     <img src="https://64.media.tumblr.com/db8472cfbb89a155148003b053d5f3de/4d6d987e0cee7307-8e/s400x225/158142e8e876044a6191733a02f6ee5ac1643b58.gif" 
                          alt="Banner" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center">
-                    <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-gray-100 text-center mb-4">
+                <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center px-4">
+                    <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-gray-100 text-center mb-4">
                         Premium Cannabis
                     </h1>
-                    <p class="text-xl text-gray-300 text-center mb-8">CLAY GROUP - Qualität die überzeugt</p>
-                    <button onclick="showShop()" class="px-8 py-3 border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white bg-transparent rounded-lg font-semibold transition-all duration-300">
+                    <p class="text-lg sm:text-xl text-gray-300 text-center mb-6 sm:mb-8 px-4">CLAY GROUP - Qualität die überzeugt</p>
+                    <button onclick="showShop()" class="px-6 sm:px-8 py-3 border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-white bg-transparent rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base">
                         SHOP
                     </button>
                 </div>
@@ -97,114 +177,127 @@
         </div>
 
         <!-- Shop Page -->
-        <div id="shopPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
-            <!-- Shop Header -->
-            <header class="sticky top-0 z-40 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-                <div class="container mx-auto px-4 py-4">
-                    <div class="flex items-center justify-between">
-                        <button onclick="showHome()" class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                            <span>Back to Home</span>
-                        </button>
-                        <div class="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
-                            CLAY GROUP
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <button class="p-2 rounded-full bg-dark-400 hover:bg-dark-300 transition-colors duration-200">
-                                <svg class="w-6 h-6 text-gray-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 11-4 0v-6m4 0V9a2 2 0 10-4 0v4.01"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+        <div id="shopPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
 
             <!-- Hero Section -->
-            <section class="relative py-20 px-4 overflow-hidden">
+            <section class="relative py-20 sm:py-32 md:py-40 px-4 overflow-hidden">
                 <div class="absolute inset-0">
-                    <img src="https://cdn.pixabay.com/photo/2015/10/15/21/05/texture-990067_1280.jpg" 
-                         alt="Premium Collection Background" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-r from-green-900/20 to-emerald-900/20"></div>
-                </div>
-                <div class="relative container mx-auto text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-400 via-emerald-300 to-green-500 bg-clip-text text-transparent">
-                        PREMIUM COLLECTION
-                    </h1>
-                    <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Entdecke unser hochwertiges Cannabisfür das ultimative Raucherlebnis</p>
-                    <div class="flex justify-center space-x-8 text-sm text-gray-400">
-                        <span> Premium Quality</span>
-                        <span> Diskreter Versand</span>
-                        <span> Sichere Zahlung</span>
+                    <div id="shopBannerSlider" class="w-full h-full">
+                        <img id="shopBannerImage" src="https://cdn.discordapp.com/attachments/1377288531587891283/1396136291409854644/2e8ff518-c2b2-4a73-aac5-daf7adf911f1.jpeg?ex=687cfcbe&is=687bab3e&hm=dc856612ba4b0e447534866671d55b17ccf402a0dcbe8ca68fd63e4f2aaccd58&" class="w-full h-full object-cover transition-all duration-700" alt="Shop Banner">
                     </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/30 to-black/20"></div>
                 </div>
             </section>
 
             <!-- Products Grid -->
-            <section class="py-16 px-4">
+            <section class="py-8 sm:py-12 md:py-16 px-4">
                 <div class="container mx-auto">
-                    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                         <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW ADDITIONS SECTION -->
+            <section class="pt-16 pb-20 px-4">
+                <div class="container mx-auto max-w-4xl">
+                    <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-16 tracking-wide">NEW ADDITONS</h2>
+                    <div class="flex flex-col gap-16">
+                        <!-- Addition 1 -->
+                        <div class="flex flex-col lg:flex-row items-center bg-dark-800 border border-dark-600 rounded-xl p-8 lg:p-12 shadow-lg hover:border-green-500 transition-all duration-300">
+                            <div class="w-full lg:w-2/5 mb-6 lg:mb-0 lg:mr-12">
+                                <img src="https://cdn.discordapp.com/attachments/1377288531587891283/1396158109696917574/Bild_2025-07-19_175326749-removebg-preview.png?ex=687d1110&is=687bbf90&hm=0b1b036e0b04d5d7869ae20b5673a18b6ff1d3776002c6d083d38fcaabf34c9d&" alt="Blueberry" class="w-full max-w-xs mx-auto object-contain rounded-lg">
+                            </div>
+                            <div class="w-full lg:w-3/5 text-center lg:text-left">
+                                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Blueberry</h3>
+                                <div class="flex justify-center lg:justify-start mb-3">
+                                    <div class="flex text-green-400">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-gray-600" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                    </div>
+                                </div>
+                                <span class="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent font-semibold text-sm uppercase tracking-wider mb-4 block animate-pulse">NEW ADDITION</span>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Hochwertiges Blueberry Weed mit fruchtigem, beerigem und süßem Geschmack. THC 19-13%, CBD 1%. Premium Qualität für das ultimative Raucherlebnis.</p>
+                            </div>
+                        </div>
+                        <!-- Addition 2 -->
+                        <div class="flex flex-col lg:flex-row items-center bg-dark-800 border border-dark-600 rounded-xl p-8 lg:p-12 shadow-lg hover:border-green-500 transition-all duration-300">
+                            <div class="w-full lg:w-2/5 mb-6 lg:mb-0 lg:mr-12">
+                                <img src="https://cdn.discordapp.com/attachments/1377288531587891283/1396158223459029072/Bild_2025-07-19_175401620-removebg-preview.png?ex=687d112b&is=687bbfab&hm=ca0ccd5c45fe6b999eba26011c795292a9fd0c3cde57532e3ee6b731133b01fd&" alt="Blue Dream CBD" class="w-full max-w-xs mx-auto object-contain rounded-lg">
+                            </div>
+                            <div class="w-full lg:w-3/5 text-center lg:text-left">
+                                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Blue Dream CBD Genetik</h3>
+                                <div class="flex justify-center lg:justify-start mb-3">
+                                    <div class="flex text-green-400">
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-gray-600" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                        <svg class="w-6 h-6 fill-gray-600" viewBox="0 0 20 20"><polygon points="9.9,1.1 7.6,6.6 1.6,7.4 6,11.6 4.8,17.5 9.9,14.5 15,17.5 13.8,11.6 18.2,7.4 12.2,6.6 "/></svg>
+                                    </div>
+                                </div>
+                                <span class="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent font-semibold text-sm uppercase tracking-wider mb-4 block animate-pulse">NEW ADDITION</span>
+                                <p class="text-gray-300 text-sm md:text-base leading-relaxed">Premium CBD-reiche Genetik mit pfeffrigem, kieferartigem und beerigem Geschmack. THC 1%, CBD 10%. Perfekt für entspannte Momente ohne psychoaktive Wirkung.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
 
         <!-- Product Detail Page -->
-        <div id="productPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+        <div id="productPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
             <!-- Product Header -->
             <header class="sticky top-0 z-40 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
                 <div class="container mx-auto px-4 py-4">
-                    <button onclick="showShop()" class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button onclick="showShop()" class="group flex items-center space-x-3 text-gray-300 hover:text-white transition-all duration-300 bg-dark-700 hover:bg-dark-600 px-4 py-2 rounded-lg border border-dark-500 hover:border-green-500">
+                        <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
-                        <span>Zurück zum Shop</span>
+                        <span class="font-medium">Zurück zum Shop</span>
+                        <div class="absolute inset-0 bg-green-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
                 </div>
             </header>
 
-            <div class="container mx-auto px-4 py-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="container mx-auto px-4 py-6 sm:py-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
                     <!-- Product Images -->
                     <div class="space-y-4">
                         <div class="relative aspect-square rounded-xl overflow-hidden bg-dark-800">
-                            <img id="mainProductImage" src="/placeholder.svg" alt="" class="w-full h-full object-cover">
+                            <img id="mainProductImage" src="/placeholder.svg" alt="" class="w-full h-full object-contain">
                         </div>
-                        <div id="productThumbnails" class="flex space-x-4">
+                        <div id="productThumbnails" class="flex space-x-2 sm:space-x-4 overflow-x-auto pb-2">
                             <!-- Thumbnails will be loaded here -->
                         </div>
                     </div>
 
                     <!-- Product Info -->
-                    <div class="space-y-6">
+                    <div class="space-y-4 sm:space-y-6">
                         <div>
                             <div id="productCategory" class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-2"></div>
-                            <h1 id="productName" class="text-4xl font-bold text-white mb-2"></h1>
+                            <h1 id="productName" class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2"></h1>
                             <div class="flex items-center space-x-4 mb-4">
                                 <div class="flex items-center space-x-1">
-                                    <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
-                                    <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
-                                    <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
-                                    <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
-                                    <svg class="w-5 h-5 fill-yellow-400 text-yellow-400" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                    </svg>
-                                    <span class="text-gray-400 ml-2">(127 Bewertungen)</span>
+                                    <span class="text-gray-400 ml-2 text-sm sm:text-base">(127 Bewertungen)</span>
                                 </div>
                             </div>
-                            <p id="productPrice" class="text-3xl font-bold text-green-400"></p>
+                            <p id="productPrice" class="text-2xl sm:text-3xl font-bold text-green-400"></p>
                         </div>
 
                         <p id="productDescription" class="text-gray-300 text-lg leading-relaxed"></p>
@@ -238,8 +331,306 @@
             </div>
         </div>
 
+        <!-- Safety Page -->
+        <div id="safetyPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
+            <div class="container mx-auto px-4 py-6 sm:py-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8 text-center px-4">Sicherheit & Dosierung</h1>
+                    
+                    <!-- Safety Guidelines -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+                        <div class="bg-dark-800 rounded-xl p-4 sm:p-6 border border-green-500">
+                            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4 flex items-center">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-500 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Dosierung
+                            </h2>
+                            <div class="space-y-4 text-gray-300">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Anfänger (0-3 Monate Erfahrung)</h3>
+                                    <p>• 0.1-0.3g pro Sitzung<br>• Warten Sie 15-30 Minuten zwischen Zügen<br>• Nicht mehr als 1g pro Tag</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Erfahren (3+ Monate)</h3>
+                                    <p>• 0.3-0.5g pro Sitzung<br>• Achten Sie auf Ihre Toleranz<br>• Maximal 2g pro Tag</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Wichtige Hinweise</h3>
+                                    <p>• Starten Sie immer mit kleinen Mengen<br>• Hören Sie auf Ihren Körper<br>• Trinken Sie ausreichend Wasser</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl p-4 sm:p-6 border border-blue-500">
+                            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-3 sm:mb-4 flex items-center">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                                </svg>
+                                Sicherheitsregeln
+                            </h2>
+                            <div class="space-y-4 text-gray-300">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Konsum</h3>
+                                    <p>• Nur in sicherer Umgebung konsumieren<br>• Nicht unter Einfluss Auto fahren<br>• Nicht mit Alkohol mischen</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Lagerung</h3>
+                                    <p>• Kühl und trocken lagern<br>• Außerhalb der Reichweite von Kindern<br>• In luftdichten Behältern aufbewahren</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-white mb-2">Gesundheit</h3>
+                                    <p>• Bei gesundheitlichen Problemen pausieren<br>• Regelmäßige Pausen einlegen<br>• Bei Unsicherheiten Arzt konsultieren</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Effects Information -->
+                    <div class="bg-dark-800 rounded-xl p-6 border border-purple-500 mb-8">
+                        <h2 class="text-2xl font-semibold text-white mb-6 flex items-center">
+                            <svg class="w-6 h-6 text-purple-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Wirkungen & Nebenwirkungen
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-green-400 mb-3">Positive Wirkungen</h3>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Entspannung und Stressabbau</li>
+                                    <li>• Verbesserte Kreativität</li>
+                                    <li>• Appetitanregung</li>
+                                    <li>• Schmerzlinderung</li>
+                                    <li>• Verbesserter Schlaf</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-red-400 mb-3">Mögliche Nebenwirkungen</h3>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Trockener Mund</li>
+                                    <li>• Rote Augen</li>
+                                    <li>• Erhöhter Puls</li>
+                                    <li>• Angstzustände (bei Überdosierung)</li>
+                                    <li>• Müdigkeit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Legal Notice -->
+                    <div class="bg-dark-800 rounded-xl p-6 border border-yellow-500">
+                        <h2 class="text-2xl font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                            </svg>
+                            Rechtlicher Hinweis
+                        </h2>
+                        <p class="text-gray-300 leading-relaxed">
+                            Der Konsum von Cannabis ist in vielen Ländern illegal. Informieren Sie sich über die geltenden Gesetze in Ihrem Land. 
+                            Diese Informationen dienen nur zu Bildungszwecken. Wir übernehmen keine Verantwortung für den Konsum unserer Produkte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
+            <div class="container mx-auto px-4 py-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl font-bold text-white mb-8 text-center">Kontakt</h1>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Contact Information -->
+                        <div class="space-y-6">
+                            <div class="bg-dark-800 rounded-xl p-6 border border-green-500">
+                                <h2 class="text-2xl font-semibold text-white mb-6">Kontaktiere uns</h2>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center space-x-4 p-4 bg-dark-700 rounded-lg">
+                                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Hauptkontakt</h3>
+                                            <p class="text-gray-300">@venox4 auf Telegram</p>
+                                            <button onclick="openTelegram('venox4')" class="text-green-400 hover:text-green-300 transition-colors text-sm">
+                                                Direkt kontaktieren →
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center space-x-4 p-4 bg-dark-700 rounded-lg">
+                                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Discord Support</h3>
+                                            <p class="text-gray-300">@trennoxx auf Discord</p>
+                                            <button onclick="openDiscord('trennoxx')" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">
+                                                Direkt kontaktieren →
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-dark-800 rounded-xl p-6 border border-purple-500">
+                                <h2 class="text-2xl font-semibold text-white mb-4">Support Zeiten</h2>
+                                <div class="space-y-2 text-gray-300">
+                                    <p><strong>Montag - Freitag:</strong> 10:00 - 22:00 Uhr</p>
+                                    <p><strong>Samstag:</strong> 12:00 - 20:00 Uhr</p>
+                                    <p><strong>Sonntag:</strong> 14:00 - 18:00 Uhr</p>
+                                </div>
+                                <p class="text-sm text-gray-400 mt-4">
+                                    * Antwortzeiten können je nach Nachfrage variieren
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
+                            <h2 class="text-2xl font-semibold text-white mb-6">Nachricht senden</h2>
+                            <form class="space-y-4">
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Name</label>
+                                    <input type="text" class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-green-500 transition-colors" placeholder="Dein Name">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">E-Mail</label>
+                                    <input type="email" class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-green-500 transition-colors" placeholder="deine@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Betreff</label>
+                                    <select class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-green-500 transition-colors">
+                                        <option>Allgemeine Anfrage</option>
+                                        <option>Bestellproblem</option>
+                                        <option>Produktfrage</option>
+                                        <option>Technischer Support</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">Nachricht</label>
+                                    <textarea rows="4" class="w-full p-3 bg-dark-700 border border-dark-600 rounded-lg text-white focus:border-green-500 transition-colors" placeholder="Deine Nachricht..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
+                                    Nachricht senden
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Page -->
+        <div id="faqPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
+            <div class="container mx-auto px-4 py-8">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl font-bold text-white mb-8 text-center">Häufig gestellte Fragen</h1>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(1)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Wie funktioniert der Bestellprozess?</h3>
+                                <svg id="faq-icon-1" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-1" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Klicken Sie auf "Jetzt kaufen" bei einem Produkt. Sie werden automatisch zu Telegram weitergeleitet, 
+                                    wo Sie direkt mit einem Mitarbeiter chatten können. Dort besprechen wir alle Details und vereinbaren 
+                                    Lieferung oder Abholung.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(2)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Welche Zahlungsmethoden akzeptieren Sie?</h3>
+                                <svg id="faq-icon-2" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-2" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Wir akzeptieren Guthaben (bei Abholung) und Bitcoin. 
+                                    PayPal ist derzeit nicht verfügbar. Alle Zahlungen werden sicher und diskret abgewickelt.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(3)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Wie diskret ist der Versand?</h3>
+                                <svg id="faq-icon-3" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-3" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Bei Versand ist nur Treffen möglich. Wir verwenden neutrale Verpackungen ohne Hinweise auf den Inhalt. 
+                                    Die Sendung wird als normales Paket versendet.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(4)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Was ist die Mindestbestellmenge?</h3>
+                                <svg id="faq-icon-4" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-4" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Es gibt keine Mindestbestellmenge. Sie können auch einzelne Gramm bestellen.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(5)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Wie lange dauert die Lieferung?</h3>
+                                <svg id="faq-icon-5" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-5" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Bei Versand: 1-3 Werktage nach Zahlungseingang.<br>
+                                    Bei Abholung: Termin wird individuell vereinbart.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-800 rounded-xl border border-dark-600">
+                            <button onclick="toggleFAQ(6)" class="w-full p-6 text-left flex items-center justify-between hover:bg-dark-700 transition-colors">
+                                <h3 class="text-lg font-semibold text-white">Gibt es eine Garantie auf die Qualität?</h3>
+                                <svg id="faq-icon-6" class="w-6 h-6 text-gray-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div id="faq-content-6" class="hidden px-6 pb-6">
+                                <p class="text-gray-300 leading-relaxed">
+                                    Wir garantieren die Qualität unserer Produkte. 
+                                    Bei Problemen kontaktieren Sie uns umgehend.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Checkout Page -->
-        <div id="checkoutPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900">
+        <div id="checkoutPage" class="hidden min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 pt-16">
             <!-- Checkout Header -->
             <header class="sticky top-0 z-40 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
                 <div class="container mx-auto px-4 py-4">
@@ -273,8 +664,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                                 <div class="text-left">
-                                    <span class="text-white font-semibold block">Versand</span>
-                                    <span class="text-gray-400 text-sm">Lieferung an deine Adresse</span>
+                                    <span class="text-white font-semibold block">Versand (Treffen)</span>
+                                    <span class="text-gray-400 text-sm">Persönliche Übergabe an vereinbarten Ort</span>
                                 </div>
                             </button>
                             <button onclick="selectDelivery('Abholung')" id="deliveryAbholung" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-gray-400 transition-all flex items-center space-x-4">
@@ -352,11 +743,29 @@
                             <h2 class="text-2xl font-semibold text-white mb-6">Zahlungsmethode</h2>
 
                             <div class="space-y-4">
-                                <button type="button" onclick="selectPayment('PayPal')" id="paymentPayPal" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-gray-400 transition-all flex items-center space-x-4">
+                                <button type="button" onclick="selectPayment('Guthaben')" id="paymentGuthaben" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-green-500 transition-all flex items-center space-x-4">
+                                    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                    </svg>
+                                    <div class="text-left">
+                                        <span class="text-white font-semibold block">Guthaben</span>
+                                        <span class="text-gray-400 text-sm">Nur bei Abholung verfügbar</span>
+                                    </div>
+                                </button>
+
+                                <div id="guthabenInfo" class="hidden bg-green-500/10 border border-green-500 rounded-lg p-4">
+                                    <h3 class="text-white font-semibold mb-2">Guthaben Zahlung:</h3>
+                                    <p class="text-gray-300 mb-2">Zahlung erfolgt bei der Abholung in bar oder per Guthaben.</p>
+                                </div>
+
+                                <button type="button" onclick="selectPayment('PayPal')" id="paymentPayPal" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-blue-500 transition-all flex items-center space-x-4">
                                     <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                                     </svg>
-                                    <span class="text-white font-semibold">PayPal</span>
+                                    <div class="text-left">
+                                        <span class="text-white font-semibold block">PayPal</span>
+                                        <span class="text-gray-400 text-sm">Freunde & Familie</span>
+                                    </div>
                                 </button>
 
                                 <div id="paypalInfo" class="hidden bg-blue-500/10 border border-blue-500 rounded-lg p-4">
@@ -372,11 +781,14 @@
                                     </div>
                                 </div>
 
-                                <button type="button" onclick="selectPayment('Bitcoin')" id="paymentBitcoin" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-gray-400 transition-all flex items-center space-x-4">
+                                <button type="button" onclick="selectPayment('Bitcoin')" id="paymentBitcoin" class="w-full p-4 rounded-lg border-2 border-dark-600 hover:border-orange-500 transition-all flex items-center space-x-4">
                                     <svg class="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.546z"/>
                                     </svg>
-                                    <span class="text-white font-semibold">Bitcoin</span>
+                                    <div class="text-left">
+                                        <span class="text-white font-semibold block">Bitcoin</span>
+                                        <span class="text-gray-400 text-sm">Kryptowährung</span>
+                                    </div>
                                 </button>
 
                                 <div id="bitcoinInfo" class="hidden bg-orange-500/10 border border-orange-500 rounded-lg p-4">
