@@ -25,7 +25,7 @@ const PRODUCTS_CONFIG = [
     name: "Blueberry 1g ",
     price: 8.00,
     image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
-    image2: "",
+    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
     description:
       "Hochwertiges weed",
     features: ["THC 19-13%", "CBD 1%", "Geschmack fruchtig, beerig, süß", ""],
@@ -37,7 +37,7 @@ const PRODUCTS_CONFIG = [
     name: "Super Lemon Haze 1g",
     price: 8.00,
     image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
-    image2: "",
+    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
     description: "Hochwertiges weed",
     features: ["THC 18-22%", "CBD 1%", "Geschmack Zitrus, fruchtig, erdig, würzig", ""],
     category: "Weed",
@@ -48,7 +48,7 @@ const PRODUCTS_CONFIG = [
     name: "Blue Dream CBD Genetik 1g",
     price: 10.00,
     image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
-    image2: "",
+    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
     description: "Hochwertiges weed",
     features: ["THC 1%", "CBD 10%", "Geschmack Pfeffer, Kiefer, beerig, süß", ""],
     category: "weed",
@@ -59,7 +59,7 @@ const PRODUCTS_CONFIG = [
     name: "Big Bud 1g",
     price: 8.00,
     image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
-    image2: "",
+    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1396120941171314812/fc9d57df-0f25-4272-8d4c-19421d7af768.png?ex=687cee73&is=687b9cf3&hm=7f4f6862696158e9146c4581c155d321fa527b6601ab841fc89d432496c56749&",
     description: "Hochwertiges weed",
     features: ["THC 15-18", "CBD 1%", "Geschmack Zitrus, fruchtig, süß, würzig", ""],
     category: "Weed",
@@ -75,10 +75,26 @@ let checkoutData = null
 
 // Banner Images
 const bannerImages = [
-  "https://64.media.tumblr.com/db8472cfbb89a155148003b053d5f3de/4d6d987e0cee7307-8e/s400x225/158142e8e876044a6191733a02f6ee5ac1643b58.gif",
-  "",
+  "https://64.media.tumblr.com/db8472cfbb89a155148003b053d5f3de/4d6d987e0cee7307-8e/s400x225/158142e8e876044a6191733a02f6ee5ac1643b58.gif"
 ]
 let currentBannerIndex = 0
+
+// Shop Banner Slider
+const shopBannerImages = [
+  "https://cdn.discordapp.com/attachments/1377288531587891283/1396147188467236935/1.png?ex=687d06e4&is=687bb564&hm=2b74e76d0176dd11fdb913d5aca8fa3a5a4a35080ec154ea1ef77e33849abd5d&",
+  "https://cdn.discordapp.com/attachments/1377288531587891283/1396147220327170088/2.png?ex=687d06ec&is=687bb56c&hm=36cf1793beef7c2b269aee04b659bf3bb2278d0dd30aa012e6ee44d6b51287ef&",
+  "https://cdn.discordapp.com/attachments/1377288531587891283/1396147263075782686/3.png?ex=687d06f6&is=687bb576&hm=0c5c46c1fc4ffc46c8ea8ac645ad18aa11e36b46192d3c00084919d90fa94f9b&"
+];
+let shopBannerIndex = 0;
+
+function startShopBannerSlider() {
+  const bannerImg = document.getElementById("shopBannerImage");
+  if (!bannerImg) return;
+  setInterval(() => {
+    shopBannerIndex = (shopBannerIndex + 1) % shopBannerImages.length;
+    bannerImg.src = shopBannerImages[shopBannerIndex];
+  }, 5000);
+}
 
 // Initialize App
 document.addEventListener("DOMContentLoaded", () => {
@@ -109,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeCursor();
   startBannerSlider();
   startSplashScreen();
+  startShopBannerSlider(); // Start shop banner slider
 
   // Wait for splash screen to complete
   const splashScreen = document.getElementById('splashScreen');
@@ -180,11 +197,14 @@ function startSplashScreen() {
 
 // Banner Slider
 function startBannerSlider() {
-  setInterval(() => {
-    currentBannerIndex = (currentBannerIndex + 1) % bannerImages.length
-    document.getElementById("bannerImage").innerHTML =
-      `<img src="${bannerImages[currentBannerIndex]}" alt="Banner" class="w-full h-full object-cover">`
-  }, 5000)
+  // Only start slider if there are multiple images
+  if (bannerImages.length > 1) {
+    setInterval(() => {
+      currentBannerIndex = (currentBannerIndex + 1) % bannerImages.length
+      document.getElementById("bannerImage").innerHTML =
+        `<img src="${bannerImages[currentBannerIndex]}" alt="Banner" class="w-full h-full object-cover">`
+    }, 15000) // Increased to 15 seconds
+  }
 }
 
 // Navigation Functions
@@ -221,8 +241,48 @@ function showSuccess() {
   window.scrollTo(0, 0)
 }
 
+function showSafety() {
+  hideAllPages()
+  document.getElementById("safetyPage").classList.remove("hidden")
+  window.scrollTo(0, 0)
+}
+
+function showContact() {
+  hideAllPages()
+  document.getElementById("contactPage").classList.remove("hidden")
+  window.scrollTo(0, 0)
+}
+
+function showFAQ() {
+  hideAllPages()
+  document.getElementById("faqPage").classList.remove("hidden")
+  window.scrollTo(0, 0)
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu")
+  mobileMenu.classList.toggle("hidden")
+}
+
+function toggleFAQ(id) {
+  const content = document.getElementById(`faq-content-${id}`)
+  const icon = document.getElementById(`faq-icon-${id}`)
+  
+  content.classList.toggle("hidden")
+  icon.classList.toggle("rotate-180")
+}
+
+function openTelegram(username) {
+  window.open(`https://t.me/${username}`, "_blank")
+}
+
+function openDiscord(username) {
+  // Discord doesn't have direct user links, so we'll show a message
+  alert(`Kontaktiere @${username} auf Discord für Support!`)
+}
+
 function hideAllPages() {
-  const pages = ["homePage", "shopPage", "productPage", "checkoutPage", "successPage"]
+  const pages = ["homePage", "shopPage", "productPage", "checkoutPage", "successPage", "safetyPage", "contactPage", "faqPage"]
   pages.forEach((page) => {
     document.getElementById(page).classList.add("hidden")
   })
@@ -246,14 +306,14 @@ function loadProducts() {
             <div class="transform hover:scale-105 transition-all duration-300 animate-fadeInUp product-card" 
                  style="animation-delay: ${index * 0.1}s;">
                 <div class="group bg-gradient-to-br from-dark-800 to-dark-700 rounded-xl overflow-hidden border border-dark-600 hover:border-green-500 transition-all duration-300 hover-glow ${product.soldOut ? 'opacity-75' : ''}">
-                    <div class="relative aspect-square overflow-hidden ${product.soldOut ? '' : 'cursor-pointer'}" ${product.soldOut ? '' : 'onclick="showProduct(' + product.id + ')"'}>
+                    <div class="relative aspect-square overflow-hidden cursor-pointer" onclick="showProduct(${product.id})">
                         <img src="${product.image1}" alt="${product.name}" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         ${soldOutBadge}
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">${product.name}</h3>
-                        <p class="text-2xl font-bold text-white mb-4">$${product.price.toFixed(2)}</p>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">${product.name}</h3>
+                        <p class="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">$${product.price.toFixed(2)}</p>
                         ${buttonContent}
                     </div>
                 </div>
@@ -293,9 +353,14 @@ function loadProduct(productId) {
   // Load thumbnails
   const thumbnails = document.getElementById("productThumbnails")
   thumbnails.innerHTML = `
-        <button onclick="changeProductImage('${currentProduct.image1}')" class="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-green-500">
+        <button onclick="changeProductImage('${currentProduct.image1}')" class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border-2 border-green-500 flex-shrink-0">
             <img src="${currentProduct.image1}" alt="${currentProduct.name} 1" class="w-full h-full object-cover">
         </button>
+        ${currentProduct.image2 && currentProduct.image2.trim() !== '' ? `
+        <button onclick="changeProductImage('${currentProduct.image2}')" class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border-2 border-dark-600 flex-shrink-0">
+            <img src="${currentProduct.image2}" alt="${currentProduct.name} 2" class="w-full h-full object-cover">
+        </button>
+        ` : ''}
     `
 
   // Load features
@@ -341,7 +406,19 @@ function buyNow() {
     alert("Dieses Produkt ist leider ausverkauft!")
     return
   }
-  window.open("https://t.me/venox4", "_blank");
+  
+  // Set checkout data
+  checkoutData = {
+    product: currentProduct.name,
+    category: currentProduct.category,
+    quantity: currentQuantity,
+    total: currentProduct.price * currentQuantity
+  }
+  
+  // Redirect to Telegram with pre-filled message
+  const message = `Hallo! Ich möchte bestellen:\n\nProdukt: ${currentProduct.name}\nAnzahl: ${currentQuantity}\nGesamtpreis: $${(currentProduct.price * currentQuantity).toFixed(2)}\n\nBitte kontaktieren Sie mich für weitere Details.`
+  const encodedMessage = encodeURIComponent(message)
+  window.open(`https://t.me/venox4?text=${encodedMessage}`, "_blank")
 }
 
 // Load Checkout
@@ -393,7 +470,11 @@ function selectDelivery(method) {
     const warning = document.createElement('div')
     warning.className = 'shipping-warning'
     warning.innerHTML = `
-      
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>Versand-Hinweis:</strong><br>
+        Bei Versand ist nur Treffen möglich. Wir vereinbaren einen persönlichen Übergabeort.
+      </div>
     `
     document.body.appendChild(warning)
     
@@ -494,25 +575,38 @@ function updateDeliveryUI() {
 
 // Select Payment Method
 function selectPayment(method) {
+  // Check if Guthaben is selected but delivery is not Abholung
+  if (method === "Guthaben" && selectedDeliveryMethod !== "Abholung") {
+    alert("Guthaben ist nur bei Abholung verfügbar! Bitte wähle zuerst 'Abholung' als Liefermethode.")
+    return
+  }
+  
   selectedPaymentMethod = method
   updatePaymentUI()
 }
 
 // Update Payment UI
 function updatePaymentUI() {
+  const guthabenBtn = document.getElementById("paymentGuthaben")
   const paypalBtn = document.getElementById("paymentPayPal")
   const bitcoinBtn = document.getElementById("paymentBitcoin")
+  const guthabenInfo = document.getElementById("guthabenInfo")
   const paypalInfo = document.getElementById("paypalInfo")
   const bitcoinInfo = document.getElementById("bitcoinInfo")
 
   // Reset classes
+  guthabenBtn.className = guthabenBtn.className.replace(/border-green-500|bg-green-500\/10/g, "border-dark-600")
   paypalBtn.className = paypalBtn.className.replace(/border-blue-500|bg-blue-500\/10/g, "border-dark-600")
   bitcoinBtn.className = bitcoinBtn.className.replace(/border-orange-500|bg-orange-500\/10/g, "border-dark-600")
 
+  guthabenInfo.classList.add("hidden")
   paypalInfo.classList.add("hidden")
   bitcoinInfo.classList.add("hidden")
 
-  if (selectedPaymentMethod === "PayPal") {
+  if (selectedPaymentMethod === "Guthaben") {
+    guthabenBtn.className = guthabenBtn.className.replace("border-dark-600", "border-green-500 bg-green-500/10")
+    guthabenInfo.classList.remove("hidden")
+  } else if (selectedPaymentMethod === "PayPal") {
     paypalBtn.className = paypalBtn.className.replace("border-dark-600", "border-blue-500 bg-blue-500/10")
     paypalInfo.classList.remove("hidden")
   } else if (selectedPaymentMethod === "Bitcoin") {
