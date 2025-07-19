@@ -237,6 +237,59 @@ input:focus {
   .text-7xl {
     font-size: 3rem;
   }
+  
+  /* Mobile-specific improvements */
+  .product-card {
+    transform: none !important;
+  }
+  
+  .product-card:hover {
+    transform: none !important;
+  }
+  
+  /* Better touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improved spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Better text readability on mobile */
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Optimized grid for mobile */
+  .grid {
+    gap: 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Smaller text for very small screens */
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  /* Better button sizing */
+  button {
+    padding: 0.75rem 1rem;
+  }
 }
 
 /* Smooth Scrolling */
