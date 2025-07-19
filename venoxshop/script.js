@@ -6,7 +6,7 @@ const SHOP_CONFIG = {
   shopDescription: "Premium Cannabis",
   shopTagline: "Qualität die überzeugt",
   paypal: {
-    email: "nicktautenhahn69@gmail.com",
+
     note: "Freunde & Familie",
   },
   bitcoin: {
@@ -48,7 +48,7 @@ const PRODUCTS_CONFIG = [
     name: "Blue Dream CBD Genetik 1g",
     price: 10.00,
     image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
-    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
+    image2: "https://cdn.discordapp.com/attachments/1377288531587891283/1396171163717206047/d6d2b2b2-8c1f-4209-b1ce-669df9d8f5b6.png?ex=687d1d39&is=687bcbb9&hm=7bcedb45f28625fc43b9428095885a060de0efb6a01a1ef9f1df7d64eed6f7ef&",
     description: "Hochwertiges weed",
     features: ["THC 1%", "CBD 10%", "Geschmack Pfeffer, Kiefer, beerig, süß", ""],
     category: "weed",
@@ -647,7 +647,7 @@ document.getElementById("checkoutForm").addEventListener("submit", async functio
     ...checkoutData,
     firstName: formData.get("firstName"),
     lastName: formData.get("lastName"),
-    email: formData.get("email"),
+    
     phone: formData.get("phone"),
     paymentMethod: selectedPaymentMethod,
     deliveryMethod: selectedDeliveryMethod,
@@ -706,7 +706,7 @@ async function sendToDiscord(orderData) {
       { name: "🚚 Lieferung", value: orderData.deliveryMethod, inline: true },
       { name: "👤 Vorname", value: orderData.firstName, inline: true },
       { name: "👤 Nachname", value: orderData.lastName, inline: true },
-      { name: "📧 E-Mail", value: orderData.email, inline: true },
+      
       { name: "📱 Telefon", value: orderData.phone, inline: true },
       { name: "📅 Bestelldatum", value: new Date().toLocaleString("de-DE"), inline: false },
     ],
