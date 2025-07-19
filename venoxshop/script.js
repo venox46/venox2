@@ -22,124 +22,47 @@ const SHOP_CONFIG = {
 const PRODUCTS_CONFIG = [
   {
     id: 1,
-    name: "Blueberry 1g",
+    name: "Blueberry 1g ",
     price: 8.00,
-    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
-    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
+    image2: "",
     description:
       "Hochwertiges weed",
     features: ["THC 19-13%", "CBD 1%", "Geschmack fruchtig, beerig, süß", ""],
     category: "Weed",
+    soldOut: true,
   },
   {
     id: 2,
     name: "Super Lemon Haze 1g",
     price: 8.00,
-    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
-    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
+    image2: "",
     description: "Hochwertiges weed",
     features: ["THC 18-22%", "CBD 1%", "Geschmack Zitrus, fruchtig, erdig, würzig", ""],
     category: "Weed",
+    soldOut: true,
   },
   {
     id: 3,
     name: "Blue Dream CBD Genetik 1g",
     price: 10.00,
-    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
-    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
+    image2: "",
     description: "Hochwertiges weed",
     features: ["THC 1%", "CBD 10%", "Geschmack Pfeffer, Kiefer, beerig, süß", ""],
     category: "weed",
+    soldOut: true,
   },
   {
     id: 4,
     name: "Big Bud 1g",
     price: 8.00,
-    image1: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Cannabis_Plant.jpg/1200px-Cannabis_Plant.jpg",
-    image2: "https://upload.wikimedia.org/wikipedia/commons/9/90/420Natural_GG-4_Bud_on_desk.jpg",
+    image1: "https://cdn.discordapp.com/attachments/1377288531587891283/1395925544805073086/f03d8922-1e89-4300-abb7-987a91f848dc.png?ex=687c3878&is=687ae6f8&hm=7add1b04c245a3e1b51c334c28dbba52bc36326563c463aeed8fd2aed386a505&",
+    image2: "",
     description: "Hochwertiges weed",
     features: ["THC 15-18", "CBD 1%", "Geschmack Zitrus, fruchtig, süß, würzig", ""],
     category: "Weed",
-  },
-  {
-    id: 5,
-    name: "Smoking Pipe Classic",
-    price: 45.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Klassische Smoking Pipe aus hochwertigem Material. Zeitloses Design trifft Funktionalität.",
-    features: ["Hochwertiges Material", "Ergonomisches Design", "Abnehmbarer Kopf", "Leicht zu reinigen"],
-    category: "Pipes",
-  },
-  {
-    id: 6,
-    name: "Dab Rig Professional",
-    price: 129.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Professionelle Dab Rig für Konzentrate. Optimale Kühlung und Geschmack.",
-    features: ["Borosilicatglas", "Perkolator-System", "Titanium Nail", "Stabile Basis"],
-    category: "Dab Rigs",
-  },
-  {
-    id: 7,
-    name: "Storage Jar Set",
-    price: 24.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Luftdichte Aufbewahrungsgläser für optimale Frische deiner Kräuter.",
-    features: ["Luftdichter Verschluss", "UV-Schutz", "Verschiedene Größen", "Geruchsneutral"],
-    category: "Storage",
-  },
-  {
-    id: 8,
-    name: "Lighter Collection",
-    price: 19.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Premium Feuerzeug-Kollektion mit verschiedenen Designs und zuverlässiger Funktion.",
-    features: ["Nachfüllbar", "Windresistent", "Verschiedene Designs", "Langlebig"],
-    category: "Accessories",
-  },
-  {
-    id: 9,
-    name: "Cleaning Kit Pro",
-    price: 29.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Komplettes Reinigungs-Set für alle deine Smoking-Utensilien. Hält alles sauber und funktionsfähig.",
-    features: ["Reinigungslösung", "Bürsten-Set", "Pfeifenreiniger", "Mikrofasertücher"],
-    category: "Cleaning",
-  },
-  {
-    id: 10,
-    name: "Bubbler Glass",
-    price: 67.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Kompakter Glas-Bubbler für unterwegs. Wasserfiltration in handlicher Größe.",
-    features: ["Kompakte Größe", "Wasserfiltration", "Borosilicatglas", "Portable"],
-    category: "Bubblers",
-  },
-  {
-    id: 11,
-    name: "Rolling Tray Wooden",
-    price: 39.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Handgefertigtes Holz-Rolling-Tray mit erhöhten Rändern. Perfekt für das Drehen von Joints.",
-    features: ["Handgefertigt", "Erhöhte Ränder", "Natürliches Holz", "Rutschfest"],
-    category: "Trays",
-  },
-  {
-    id: 12,
-    name: "Scale Digital Precision",
-    price: 54.99,
-    image1: "https://i.pinimg.com/736x/92/06/56/920656e03f09691d871e149b5dad8f7f.jpg",
-    image2: "https://i.pinimg.com/736x/94/d3/14/94d31436dfc73fcf93058089f69ffd96.jpg",
-    description: "Präzise Digitalwaage für exakte Messungen. Kompakt und diskret.",
-    features: ["0.01g Genauigkeit", "Kompaktes Design", "Auto-Off Funktion", "Kalibriergewicht"],
-    category: "Scales",
   },
 ]
 
@@ -153,7 +76,7 @@ let checkoutData = null
 // Banner Images
 const bannerImages = [
   "https://64.media.tumblr.com/db8472cfbb89a155148003b053d5f3de/4d6d987e0cee7307-8e/s400x225/158142e8e876044a6191733a02f6ee5ac1643b58.gif",
-  "https://i.pinimg.com/originals/14/f4/35/14f435eaaf8d107cca5055ce150eaf47.gif",
+  "",
 ]
 let currentBannerIndex = 0
 
@@ -252,7 +175,7 @@ function startSplashScreen() {
         splashScreen.classList.add('hidden')
       }, 500)
     }
-  }, 500)
+  }, 30)
 }
 
 // Banner Slider
@@ -311,23 +234,27 @@ function loadProducts() {
   grid.innerHTML = ""
 
   PRODUCTS_CONFIG.forEach((product, index) => {
+    const soldOutBadge = product.soldOut ? 
+      '<div class="absolute top-4 right-4 bg-red-600/80 text-white px-2 py-1 rounded-full text-xs font-semibold">AUSVERKAUFT</div>' : 
+      '<div class="absolute top-4 right-4 bg-green-600/80 text-white px-2 py-1 rounded-full text-xs font-semibold">' + product.category + '</div>'
+    
+    const buttonContent = product.soldOut ? 
+      '<button disabled class="w-full bg-gray-600 text-gray-400 font-semibold py-2 rounded-lg cursor-not-allowed">Ausverkauft</button>' :
+      '<button onclick="showProduct(' + product.id + ')" class="w-full bg-green-600 text-white hover:bg-green-700 font-semibold transition-all duration-300 transform group-hover:scale-105 py-2 rounded-lg">Details ansehen</button>'
+    
     const productCard = `
             <div class="transform hover:scale-105 transition-all duration-300 animate-fadeInUp product-card" 
                  style="animation-delay: ${index * 0.1}s;">
-                <div class="group bg-gradient-to-br from-dark-800 to-dark-700 rounded-xl overflow-hidden border border-dark-600 hover:border-green-500 transition-all duration-300 hover-glow">
-                    <div class="relative aspect-square overflow-hidden cursor-pointer" onclick="showProduct(${product.id})">
+                <div class="group bg-gradient-to-br from-dark-800 to-dark-700 rounded-xl overflow-hidden border border-dark-600 hover:border-green-500 transition-all duration-300 hover-glow ${product.soldOut ? 'opacity-75' : ''}">
+                    <div class="relative aspect-square overflow-hidden ${product.soldOut ? '' : 'cursor-pointer'}" ${product.soldOut ? '' : 'onclick="showProduct(' + product.id + ')"'}>
                         <img src="${product.image1}" alt="${product.name}" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="absolute top-4 right-4 bg-green-600/80 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                            ${product.category}
-                        </div>
+                        ${soldOutBadge}
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-semibold text-gray-100 mb-2 group-hover:text-white transition-colors">${product.name}</h3>
                         <p class="text-2xl font-bold text-white mb-4">$${product.price.toFixed(2)}</p>
-                        <button onclick="showProduct(${product.id})" class="w-full bg-green-600 text-white hover:bg-green-700 font-semibold transition-all duration-300 transform group-hover:scale-105 py-2 rounded-lg">
-                            Details ansehen
-                        </button>
+                        ${buttonContent}
                     </div>
                 </div>
             </div>
@@ -350,17 +277,24 @@ function loadProduct(productId) {
   document.getElementById("mainProductImage").src = currentProduct.image1
   document.getElementById("mainProductImage").alt = currentProduct.name
   document.getElementById("quantity").textContent = currentQuantity
-  document.getElementById("buyButtonText").textContent =
-    `Jetzt kaufen - $${(currentProduct.price * currentQuantity).toFixed(2)}`
+  
+  // Update buy button based on sold out status
+  const buyButton = document.getElementById("buyButtonText")
+  if (currentProduct.soldOut) {
+    buyButton.textContent = "AUSVERKAUFT"
+    buyButton.parentElement.disabled = true
+    buyButton.parentElement.className = "w-full py-4 text-lg font-semibold bg-gray-600 text-gray-400 transition-all rounded-lg cursor-not-allowed"
+  } else {
+    buyButton.textContent = `Jetzt kaufen - $${(currentProduct.price * currentQuantity).toFixed(2)}`
+    buyButton.parentElement.disabled = false
+    buyButton.parentElement.className = "w-full py-4 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 transition-all rounded-lg"
+  }
 
   // Load thumbnails
   const thumbnails = document.getElementById("productThumbnails")
   thumbnails.innerHTML = `
         <button onclick="changeProductImage('${currentProduct.image1}')" class="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-green-500">
             <img src="${currentProduct.image1}" alt="${currentProduct.name} 1" class="w-full h-full object-cover">
-        </button>
-        <button onclick="changeProductImage('${currentProduct.image2}')" class="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-dark-600">
-            <img src="${currentProduct.image2}" alt="${currentProduct.name} 2" class="w-full h-full object-cover">
         </button>
     `
 
@@ -403,17 +337,11 @@ function changeQuantity(change) {
 
 // Buy Now
 function buyNow() {
-  if (!currentProduct) return
-
-  checkoutData = {
-    product: currentProduct.name,
-    price: currentProduct.price,
-    quantity: currentQuantity,
-    total: currentProduct.price * currentQuantity,
-    category: currentProduct.category,
+  if (currentProduct && currentProduct.soldOut) {
+    alert("Dieses Produkt ist leider ausverkauft!")
+    return
   }
-
-  showCheckout()
+  window.open("https://t.me/venox4", "_blank");
 }
 
 // Load Checkout
